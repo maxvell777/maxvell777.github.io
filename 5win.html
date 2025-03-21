@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы по JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="1win.html">Курсы</a></li>
+                    <li><a href="4win.html">О нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="module">
+            <h2>Модуль 1: Продвинутое асинхронное программирование и работа с API</h2>
+            <div class="chapter">
+                <h3>Глава 1: Асинхронность в JavaScript</h3>
+                <p><strong>Цель</strong>: Изучить механизмы асинхронного выполнения кода.</p>
+                <ul>
+                    <li>Event Loop и Call Stack.</li>
+                    <li>Callback Hell и его проблемы.</li>
+                    <li>Промисы (Promises): создание, цепочки, обработка ошибок.</li>
+                    <li>Async/Await: синтаксический сахар для работы с промисами.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        Пример с промисами
+                        const fetchData = () => {
+                        return new Promise((resolve, reject) => {
+                        setTimeout(() => resolve("Данные получены"), 1000);
+                        });
+                        };
+
+                        fetchData()
+                        .then(data => console.log(data))
+                        .catch(error => console.error(error));
+
+                        Пример с async/await
+                        const fetchDataAsync = async () => {
+                        try {
+                        const data = await fetchData();
+                        console.log(data);
+                        } catch (error) {
+                        console.error(error);
+                        }
+                        };
+                        fetchDataAsync();
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 2: Работа с Fetch API и Axios</h3>
+                <p><strong>Цель</strong>: Научиться работать с HTTP-запросами.</p>
+                <ul>
+                    <li>Fetch API: GET, POST, PUT, DELETE.</li>
+                    <li>Работа с заголовками и параметрами.</li>
+                    <li>Axios: преимущества перед Fetch.</li>
+                    <li>Обработка ошибок и тайм-ауты.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        Fetch API
+                        fetch('https://jsonplaceholder.typicode.com/posts/1')
+                        .then(response => response.json())
+                        .then(data => console.log(data))
+                        .catch(error => console.error(error));
+
+                        Axios
+                        axios.get('https://jsonplaceholder.typicode.com/posts/1')
+                        .then(response => console.log(response.data))
+                        .catch(error => console.error(error));
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 3: WebSocket и реальное время</h3>
+                <p><strong>Цель</strong>: Изучить работу с WebSocket для реального времени.</p>
+                <ul>
+                    <li>Основы WebSocket.</li>
+                    <li>Создание простого чата.</li>
+                    <li>Обработка сообщений и ошибок.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        const socket = new WebSocket('ws://example.com/socket');
+
+                        socket.onopen = () => {
+                        console.log('Соединение установлено');
+                        socket.send('Привет, сервер!');
+                        };
+
+                        socket.onmessage = (event) => {
+                        console.log('Сообщение от сервера:', event.data);
+                        };
+
+                        socket.onerror = (error) => {
+                        console.error('Ошибка:', error);
+                        };
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 4: Оптимизация асинхронного кода</h3>
+                <p><strong>Цель</strong>: Научиться оптимизировать асинхронные операции.</p>
+                <ul>
+                    <li>Параллельное выполнение с <code>Promise.all</code>.</li>
+                    <li>Ограничение количества запросов с помощью паттерна "Throttling".</li>
+                    <li>Ленивая загрузка данных.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        Promise.all
+                        const fetchMultipleData = async () => {
+                        const [data1, data2] = await Promise.all([
+                        fetch('https://jsonplaceholder.typicode.com/posts/1'),
+                        fetch('https://jsonplaceholder.typicode.com/posts/2')
+                        ]);
+                        console.log(await data1.json(), await data2.json());
+                        };
+
+                        Throttling
+                        const throttle = (func, limit) => {
+                        let inThrottle;
+                        return function() {
+                        if (!inThrottle) {
+                        func.apply(this, arguments);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                        }
+                        };
+                        };
+                    </code>
+                </div>
+            </div>
+        </div>
+        <div class="module">
+            <h2>Модуль 2: Продвинутые паттерны и оптимизация</h2>
+            <div class="chapter">
+                <h3>Глава 1: Паттерны проектирования</h3>
+                <p><strong>Цель</strong>: Изучить продвинутые паттерны проектирования.</p>
+                <ul>
+                    <li>Модульный паттерн.</li>
+                    <li>Паттерн "Наблюдатель" (Observer).</li>
+                    <li>Паттерн "Синглтон" (Singleton).</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        Модульный паттерн
+                        const Module = (() => {
+                        const privateMethod = () => console.log('Приватный метод');
+                        return {
+                        publicMethod: () => privateMethod()
+                        };
+                        })();
+
+                        Module.publicMethod();
+
+                        Паттерн "Наблюдатель"
+                        class Observer {
+                        constructor() {
+                        this.observers = [];
+                        }
+                        subscribe(fn) {
+                        this.observers.push(fn);
+                        }
+                        notify(data) {
+                        this.observers.forEach(fn => fn(data));
+                        }
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 2: Оптимизация производительности</h3>
+                <p><strong>Цель</strong>: Научиться оптимизировать код для повышения производительности.</p>
+                <ul>
+                    <li>Оптимизация рендеринга в браузере.</li>
+                    <li>Использование Web Workers для тяжелых вычислений.</li>
+                    <li>Ленивая загрузка и мемоизация.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        Web Workers
+                        const worker = new Worker('worker.js');
+                        worker.postMessage('start');
+                        worker.onmessage = (event) => {
+                        console.log('Результат:', event.data);
+                        };
+
+                        Мемоизация
+                        const memoize = (fn) => {
+                        const cache = {};
+                        return (...args) => {
+                        const key = JSON.stringify(args);
+                        if (cache[key]) return cache[key];
+                        const result = fn(...args);
+                        cache[key] = result;
+                        return result;
+                        };
+                        };
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 3: Работа с Proxy и Reflect</h3>
+                <p><strong>Цель</strong>: Изучить возможности Proxy и Reflect.</p>
+                <ul>
+                    <li>Создание Proxy для объектов.</li>
+                    <li>Использование Reflect для метапрограммирования.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        const target = { message: 'Привет' };
+                        const handler = {
+                        get(target, prop) {
+                        return prop in target ? target[prop] : 'Не найдено';
+                        }
+                        };
+                        const proxy = new Proxy(target, handler);
+                        console.log(proxy.message); // Привет
+                        console.log(proxy.unknown); // Не найдено
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 4: Современные возможности ES6+</h3>
+                <p><strong>Цель</strong>: Изучить новые возможности JavaScript.</p>
+                <ul>
+                    <li>Деструктуризация.</li>
+                    <li>Операторы rest и spread.</li>
+                    <li>Генераторы и итераторы.</li>
+                    <li>Модули (import/export).</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        Деструктуризация
+                        const { name, age } = { name: 'Иван', age: 30 };
+                        console.log(name, age);
+
+                        Генераторы
+                        function* generator() {
+                        yield 1;
+                        yield 2;
+                        }
+                        const gen = generator();
+                        console.log(gen.next().value); // 1
+                    </code>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach(chapter => {
+                const button = document.createElement('button');
+                button.textContent = 'Скрыть/Показать';
+                button.classList.add('toggle-button');
+                chapter.appendChild(button);
+
+                button.addEventListener('click', () => {
+                    const content = chapter.querySelectorAll('p, ul, .code-block');
+                    content.forEach(item => {
+                        item.style.display = item.style.display === 'none' ? 'block' : 'none';
+                    });
+                });
+            });
+        </script>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Учите JavaScript. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы по JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="1win.html">Курсы</a></li>
+                    <li><a href="4win.html">О нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="module">
+            <h2>Модуль 1: Основы JavaScript</h2>
+            <div class="chapter">
+                <h3>Глава 1: Введение в JavaScript</h3>
+                <p><strong>Что такое JavaScript?</strong></p>
+                <ul>
+                    <li>История создания: JavaScript был создан Бренданом Эйхом в 1995 году для добавления интерактивности на веб-страницы.</li>
+                    <li>Роль в веб-разработке: JavaScript используется для создания динамических и интерактивных веб-приложений.</li>
+                </ul>
+                <p><strong>Настройка среды разработки:</strong></p>
+                <ul>
+                    <li>Установка Node.js и редактора кода (например, VS Code).</li>
+                    <li>Первая программа: <code>console.log("Hello, World!");</code></li>
+                </ul>
+                <div class="code-block">
+                    <code>console.log("Hello, World!");</code>
+                </div>
+                <p><strong>Основы синтаксиса:</strong></p>
+                <ul>
+                    <li>Переменные: <code>let</code>, <code>const</code>, <code>var</code>.</li>
+                    <li>Типы данных: строки, числа, булевы значения, <code>null</code>, <code>undefined</code>, объекты.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let name = "Alice";
+                        const age = 30;
+                        var isStudent = true;
+                        console.log(name, age, isStudent);
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 2: Операторы и управляющие конструкции</h3>
+                <p><strong>Арифметические и логические операторы:</strong></p>
+                <ul>
+                    <li>Арифметические: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code>.</li>
+                    <li>Логические: <code>&&</code>, <code>||</code>, <code>!</code>, <code>===</code>, <code>!==</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let x = 10;
+                        let y = 5;
+                        console.log(x > y && y > 0); // true
+                    </code>
+                </div>
+                <p><strong>Условные операторы:</strong></p>
+                <ul>
+                    <li><code>if</code>, <code>else if</code>, <code>else</code>.</li>
+                    <li>Тернарный оператор: <code>условие ? выражение1 : выражение2</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let temperature = 25;
+                        if (temperature > 30) {
+                        console.log("Жарко!");
+                        } else if (temperature > 20) {
+                        console.log("Тепло.");
+                        } else {
+                        console.log("Холодно.");
+                        }
+                    </code>
+                </div>
+                <p><strong>Циклы:</strong></p>
+                <ul>
+                    <li><code>for</code>, <code>while</code>, <code>do...while</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        for (let i = 0; i < 5; i++) {
+                        console.log(i);
+                        }
+                    </code>
+                </div>
+            </div>
+
+            <!-- Глава 3: Функции -->
+            <div class="chapter">
+                <h3>Глава 3: Функции</h3>
+                <p><strong>Объявление функций:</strong></p>
+                <ul>
+                    <li>Function Declaration: <code>function name() {}</code>.</li>
+                    <li>Function Expression: <code>const name = function() {}</code>.</li>
+                    <li>Arrow Functions: <code>const name = () => {}</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        function greet(name) {
+                        return `Hello, ${name}!`;
+                        }
+                        console.log(greet("Alice"));
+                    </code>
+                </div>
+                <p><strong>Параметры и аргументы:</strong></p>
+                <ul>
+                    <li>Значения по умолчанию: <code>function add(a = 0, b = 0) {}</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        function add(a = 0, b = 0) {
+                        return a + b;
+                        }
+                        console.log(add(5, 3)); // 8
+                    </code>
+                </div>
+                <p><strong>Замыкания:</strong></p>
+                <ul>
+                    <li>Лексическое окружение: доступ к переменным внешней функции из внутренней.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        function createCounter() {
+                        let count = 0;
+                        return function() {
+                        count++;
+                        return count;
+                        };
+                        }
+                        const counter = createCounter();
+                        console.log(counter()); // 1
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 4: Работа с массивами и объектами</h3>
+                <p><strong>Массивы:</strong></p>
+                <ul>
+                    <li>Создание: <code>let arr = [1, 2, 3]</code>.</li>
+                    <li>Методы: <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>, <code>slice</code>, <code>splice</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let fruits = ["apple", "banana"];
+                        fruits.push("orange");
+                        console.log(fruits); // ["apple", "banana", "orange"]
+                    </code>
+                </div>
+                <p><strong>Объекты:</strong></p>
+                <ul>
+                    <li>Создание: <code>let obj = { key: value }</code>.</li>
+                    <li>Свойства и методы: доступ через точку или квадратные скобки.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let person = {
+                        name: "John",
+                        age: 30,
+                        greet: function() {
+                        console.log(`Hello, my name is ${this.name}`);
+                        }
+                        };
+                        person.greet(); // Hello, my name is John
+                    </code>
+                </div>
+                <p><strong>Итерация по массивам и объектам:</strong></p>
+                <ul>
+                    <li><code>for...of</code>, <code>for...in</code>, <code>forEach</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let numbers = [1, 2, 3];
+                        numbers.forEach(num => console.log(num));
+                    </code>
+                </div>
+            </div>
+        </div>
+        <div class="module">
+            <h2>Модуль 2: Продвинутый JavaScript</h2>
+            <div class="chapter">
+                <h3>Глава 1: Работа с DOM</h3>
+                <p><strong>Что такое DOM?</strong></p>
+                <ul>
+                    <li>Дерево DOM: узлы, элементы, текстовые узлы.</li>
+                </ul>
+                <p><strong>Выбор элементов:</strong></p>
+                <ul>
+                    <li><code>getElementById</code>, <code>querySelector</code>, <code>querySelectorAll</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let header = document.getElementById("header");
+                        console.log(header.textContent);
+                    </code>
+                </div>
+                <p><strong>Изменение DOM:</strong></p>
+                <ul>
+                    <li><code>innerHTML</code>, <code>textContent</code>, <code>appendChild</code>, <code>removeChild</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let newElement = document.createElement("div");
+                        newElement.textContent = "Новый элемент";
+                        document.body.appendChild(newElement);
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 2: События</h3>
+                <p><strong>Основы событий:</strong></p>
+                <ul>
+                    <li><code>addEventListener</code>, <code>removeEventListener</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let button = document.querySelector("button");
+                        button.addEventListener("click", () => {
+                        console.log("Кнопка нажата!");
+                        });
+                    </code>
+                </div>
+                <p><strong>Типы событий:</strong></p>
+                <ul>
+                    <li><code>click</code>, <code>mouseover</code>, <code>keydown</code>, <code>submit</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        document.addEventListener("keydown", (event) => {
+                        console.log(`Нажата клавиша: ${event.key}`);
+                        });
+                    </code>
+                </div>
+                <p><strong>Делегирование событий:</strong></p>
+                <ul>
+                    <li>Использование одного обработчика для нескольких элементов.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        document.querySelector("ul").addEventListener("click", (event) => {
+                        if (event.target.tagName === "LI") {
+                        console.log("Нажат элемент списка");
+                        }
+                        });
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 3: Асинхронный JavaScript</h3>
+                <p><strong>Callback-функции:</strong></p>
+                <ul>
+                    <li>Использование функций обратного вызова для асинхронных операций.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        function fetchData(callback) {
+                        setTimeout(() => {
+                        callback("Данные получены");
+                        }, 1000);
+                        }
+                        fetchData((data) => {
+                        console.log(data);
+                        });
+                    </code>
+                </div>
+                <p><strong>Промисы:</strong></p>
+                <ul>
+                    <li><code>Promise</code>, <code>then</code>, <code>catch</code>, <code>finally</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        let promise = new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                        resolve("Успех!");
+                        }, 1000);
+                        });
+                        promise.then((result) => {
+                        console.log(result);
+                        });
+                    </code>
+                </div>
+                <p><strong>Async/Await:</strong></p>
+                <ul>
+                    <li>Синтаксический сахар для работы с промисами.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        async function fetchData() {
+                        let response = await fetch("https://api.example.com/data");
+                        let data = await response.json();
+                        console.log(data);
+                        }
+                        fetchData();
+                    </code>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3>Глава 4: Модули и инструменты</h3>
+                <p><strong>Модули в JavaScript:</strong></p>
+                <ul>
+                    <li><code>import</code>, <code>export</code>.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        // math.js
+                        export function add(a, b) {
+                        return a + b;
+                        }
+
+                        // main.js
+                        import { add } from './math.js';
+                        console.log(add(2, 3)); // 5
+                    </code>
+                </div>
+                <p><strong>Сборка проектов:</strong></p>
+                <ul>
+                    <li>Использование Webpack или Vite.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        // webpack.config.js
+                        const path = require('path');
+
+                        module.exports = {
+                        entry: './src/index.js',
+                        output: {
+                        filename: 'bundle.js',
+                        path: path.resolve(__dirname, 'dist'),
+                        },
+                        };
+                    </code>
+                </div>
+                <p><strong>Тестирование:</strong></p>
+                <ul>
+                    <li>Использование Jest для unit-тестирования.</li>
+                </ul>
+                <div class="code-block">
+                    <code>
+                        // sum.js
+                        export function sum(a, b) {
+                        return a + b;
+                        }
+
+                        // sum.test.js
+                        import { sum } from './sum';
+                        test('adds 1 + 2 to equal 3', () => {
+                        expect(sum(1, 2)).toBe(3);
+                        });
+                    </code>
+                </div>
+            </div>
+        </div>
+
+        <script>
+    const chapters = document.querySelectorAll('.chapter');
+    chapters.forEach(chapter => {
+        const button = document.createElement('button');
+        button.textContent = 'Скрыть/Показать';
+        button.classList.add('toggle-button');
+        chapter.appendChild(button);
+
+        button.addEventListener('click', () => {
+            const content = chapter.querySelectorAll('p, ul, .code-block');
+            content.forEach(item => {
+                item.style.display = item.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    });
+        </script>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Учите JavaScript. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
